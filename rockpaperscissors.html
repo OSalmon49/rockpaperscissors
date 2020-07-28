@@ -1,0 +1,83 @@
+<html>
+    <title>Rock Paper Scissors</title>
+    <script>
+        function computerPlay(){
+            const randomNumber=(Math.floor(Math.random()* 3))
+            if (randomNumber === 0) {
+                return 'Rock';
+            } 
+            else if (randomNumber === 1){
+                return 'Paper';
+            }
+            else if (randomNumber === 2){
+            return 'Scissors';
+            }
+                }
+                console.log(computerPlay)
+            function playersChoice (str){
+                return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+            }
+            console.log(playersChoice)
+           
+           let w=0;
+           let l=0;
+        function playRound(playersSelection, computersSelection)
+        
+           { if (computersSelection === playersSelection){
+           return `It's a tie!`;
+        }
+        else if (computersSelection === 'Paper') {
+            if (playersSelection === 'Rock'){
+            l++; 
+            return 'You lose! Paper beats rock!';}
+            else if (playersSelection === 'Scissors'){
+                w++;
+                return 'You win! Scissors beats paper!';
+            } }
+        else if (computersSelection === 'Scissors' ) {
+            if (playersSelection === 'Rock') {
+                w++;
+                return 'You win! Rock beats scissors!';}
+                else if (playersSelection === 'Paper'){
+                    l++;
+                    return 'You lose! Scissors beat paper!';
+                }
+            }
+        else {
+            if (playersSelection==='Paper'){
+                w++;
+                return 'You win! Paper beats rock!';
+            }
+            else if (playersSelection === 'Scissors'){
+                l++;
+                return 'You lose! Rock beats scissors!';
+            }
+        }
+        }
+    
+        let playersSelection= prompt('What do you play?')
+        const computersSelection = computerPlay()
+            console.log(playRound)
+      
+        function game(){
+            round = 0;
+            while (round <5){
+                let playersSelection= prompt('What do you play?');
+                const computersSelection=computerPlay();
+                console.log(playRound(playersSelection, computersSelection));
+                round++;
+            }
+            if (w>l) {
+                return 'You win the game!';
+            }
+            else if (w<l) { 
+                return 'You lose the game!';
+            }
+            else {
+                return `It's a draw!`;
+            }
+        }
+        console.log(game)
+       
+    </script>
+</html>
